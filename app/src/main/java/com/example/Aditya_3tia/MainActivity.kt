@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Aditya_3tia.databinding.ActivityMainBinding
+import com.example.Aditya_3tia.pertemuan_5.LimaActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -58,6 +59,11 @@ class MainActivity : AppCompatActivity() {
                     dialog.dismiss()
                 }
                 .show()
+
+        }
+            binding.btnToLima.setOnClickListener {
+                val intent = Intent(this@MainActivity, LimaActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
-}
