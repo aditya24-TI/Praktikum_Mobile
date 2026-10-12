@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Aditya_3tia.databinding.ActivityMainBinding
 import com.example.Aditya_3tia.pertemuan_5.LimaActivity
+import com.example.Aditya_3tia.pertemuan_6.EnamActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,24 +46,28 @@ class MainActivity : AppCompatActivity() {
 
         // 4. Tombol Logout dengan konfirmasi AlertDialog
         binding.btnLogout.setOnClickListener {
+            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
             AlertDialog.Builder(this)
-                .setTitle("Konfirmasi Logout")
-                .setMessage("Apakah Anda yakin ingin keluar dari aplikasi?")
-                .setPositiveButton("Ya") { _, _ ->
-                    val intent = Intent(this, LoginActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    }
-                    startActivity(intent)
+                .setTitle("Logout")
+                .setMessage("Apakah Anda yakin ingin keluar?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+                    dialog.dismiss()
+                    startActivity(Intent(this, LoginActivity::class.java))
                     finish()
                 }
-                .setNegativeButton("Tidak") { dialog, _ ->
-                    dialog.dismiss()
-                }
+                .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
                 .show()
-
         }
+
             binding.btnToLima.setOnClickListener {
                 val intent = Intent(this@MainActivity, LimaActivity::class.java)
+                startActivity(intent)
+            }
+            binding.btnToEnam.setOnClickListener {
+                val intent = Intent(this@MainActivity, EnamActivity::class.java)
                 startActivity(intent)
             }
         }
