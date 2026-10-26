@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("EXTRA_USERNAME", inputedUsername)
                 intent.putExtra("EXTRA_PASSWORD", inputedPassword)
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, BaseActivity::class.java))
                 finish()
             } else {
                 AlertDialog.Builder(this)

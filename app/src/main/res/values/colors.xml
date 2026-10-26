@@ -5,4 +5,8 @@
     <color name="biru">#4f90ff</color>
     <color name="cyan">#1DE4F2</color>
     <color name="orange">#FF6919</color>
+    <color name="tutorial_blue">#64B5F6</color>
+    <color name="tutorial_green">#AED581</color>
+    <color name="tutorial_teal">#4DB6AC</color>
+    <color name="dot_selected">#BBBFBF</color>
 </resources>
