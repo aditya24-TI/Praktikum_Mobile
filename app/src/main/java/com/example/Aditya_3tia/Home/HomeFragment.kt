@@ -12,12 +12,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Aditya_3tia.DetailActivity
+import com.example.Aditya_3tia.Home.pertemuan10.TenthActivity
 import com.example.Aditya_3tia.Home.pertemuan_5.LimaActivity
 import com.example.Aditya_3tia.Home.pertemuan_6.EnamActivity
 import com.example.Aditya_3tia.Home.pertemuan_9.NinthActivity
 import com.example.Aditya_3tia.LoginActivity
 import com.example.Aditya_3tia.R
 import com.example.Aditya_3tia.databinding.ActivityMainBinding
+import com.example.Aditya_3tia.databinding.ActivityTenthBinding
 import com.example.Aditya_3tia.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -61,6 +63,10 @@ class HomeFragment : Fragment() {
         }
         binding.btnToNinth.setOnClickListener {
             val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToTenth.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
 
